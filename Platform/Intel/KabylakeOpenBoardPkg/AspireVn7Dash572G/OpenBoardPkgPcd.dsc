@@ -127,9 +127,9 @@
   # PcdIpmiFeatureEnable will not be enabled (no BMC)
   # TODO: Can be build-time (user) choice
   gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable                |FALSE
-  gS3FeaturePkgTokenSpaceGuid.PcdS3FeatureEnable                          |TRUE
+  gS3FeaturePkgTokenSpaceGuid.PcdS3FeatureEnable                          |FALSE
   # TODO: Definitions (now added SmbiosDxe)
-  gSmbiosFeaturePkgTokenSpaceGuid.PcdSmbiosFeatureEnable                  |TRUE
+  gSmbiosFeaturePkgTokenSpaceGuid.PcdSmbiosFeatureEnable                  |FALSE
   # Requires actual hook-up
   gUsb3DebugFeaturePkgTokenSpaceGuid.PcdUsb3DebugFeatureEnable            |FALSE
   # FIXME: (Similar) DXE module is duplicate?
