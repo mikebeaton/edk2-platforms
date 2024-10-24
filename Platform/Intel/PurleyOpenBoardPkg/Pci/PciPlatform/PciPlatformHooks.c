@@ -212,7 +212,7 @@ PciPlatformInitPciIovData (
   Status = gBS->LocateProtocol (
              &gEfiPciIovPlatformProtocolGuid,
              NULL,
-             &gPciIovPlatformProtocol
+             (VOID **)&gPciIovPlatformProtocol
              );
   if (!EFI_ERROR (Status)) {
     Status = gPciIovPlatformProtocol->GetSystemLowestPageSize (
@@ -295,9 +295,9 @@ PciPlatformEarlyInit (
   //
   // Locate the IIO Protocol Interface
   //
-  Status = gBS->LocateProtocol (&gEfiIioUdsProtocolGuid,NULL,&mIioUds);
+  Status = gBS->LocateProtocol (&gEfiIioUdsProtocolGuid, NULL, (VOID **)&mIioUds);
   ASSERT_EFI_ERROR (Status);
-  Status = gBS->LocateProtocol (&gEfiIioSystemProtocolGuid, NULL, &IioSystemProtocol);
+  Status = gBS->LocateProtocol (&gEfiIioSystemProtocolGuid, NULL, (VOID **)&IioSystemProtocol);
   ASSERT_EFI_ERROR (Status); 
 
   IioGlobalData = IioSystemProtocol->IioGlobalData;
@@ -448,14 +448,14 @@ PhaseNotify (
     Status = gBS->LocateProtocol (
                     &gEfiPciRootBridgeIoProtocolGuid,
                     NULL,
-                    &(mPciPrivateData.PciRootBridgeIo)
+                    (VOID **)&(mPciPrivateData.PciRootBridgeIo)
                     );
     ASSERT_EFI_ERROR (Status);
 
     Status = gBS->LocateProtocol (
                     &gEfiCpuIo2ProtocolGuid,
                     NULL,
-                    &(mPciPrivateData.CpuIo)
+                    (VOID **)&(mPciPrivateData.CpuIo)
                     );
     ASSERT_EFI_ERROR (Status);
     mPciPrivateData.Context.CpuIo = mPciPrivateData.CpuIo;

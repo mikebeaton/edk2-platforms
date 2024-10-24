@@ -11,7 +11,7 @@ DefinitionBlock ("WFPPlatform.asl","DSDT",2,"INTEL","PLATWFP ",3)
   #include "CommonPlatform.asi"
   #include "PlatformPciTree_WFP.asi"
   #include "AMLUPD.asl"
-  #include "DSDT.ASL"
+  #include "DSDT.asl"
   #include "Pch.asl"       //This is in another package (PchPkg)
   #include "Platform.asl"
   #include "PlatformGpe.asi"
