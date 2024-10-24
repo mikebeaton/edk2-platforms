@@ -12,8 +12,6 @@ PatchDsdtTable (
   IN OUT   EFI_ACPI_COMMON_HEADER   *Table
   );
 
-#pragma optimize("",off)
-
 BIOS_ACPI_PARAM                *mAcpiParameter;
 
 EFI_IIO_UDS_PROTOCOL        *mIioUds;
@@ -453,7 +451,7 @@ InstallAcpiBoard (
   //
   // Locate the IIO Protocol Interface
   //
-  Status = gBS->LocateProtocol (&gEfiIioUdsProtocolGuid,NULL,&mIioUds);
+  Status = gBS->LocateProtocol (&gEfiIioUdsProtocolGuid, NULL, (VOID **) &mIioUds);
   ASSERT_EFI_ERROR (Status);
 
   GuidHob    = GetFirstGuidHob (&gEfiMemoryMapGuid);
@@ -468,7 +466,7 @@ InstallAcpiBoard (
   //
   // Find the AcpiTable protocol
   //
-  Status = gBS->LocateProtocol (&gEfiAcpiTableProtocolGuid, NULL, &AcpiTable);
+  Status = gBS->LocateProtocol (&gEfiAcpiTableProtocolGuid, NULL, (VOID **) &AcpiTable);
   ASSERT_EFI_ERROR (Status);
 
   //
@@ -477,7 +475,7 @@ InstallAcpiBoard (
   Status = LocateSupportProtocol (
             &gEfiFirmwareVolume2ProtocolGuid,
             &gEfiCallerIdGuid,
-            &FwVol,
+            (VOID **) &FwVol,
             TRUE
             );
   ASSERT_EFI_ERROR (Status);
@@ -496,7 +494,7 @@ InstallAcpiBoard (
                       &gEfiCallerIdGuid,
                       EFI_SECTION_RAW,
                       Instance,
-                      &CurrentTable,
+                      (VOID **) &CurrentTable,
                       (UINTN *) &Size,
                       &FvStatus
                       );

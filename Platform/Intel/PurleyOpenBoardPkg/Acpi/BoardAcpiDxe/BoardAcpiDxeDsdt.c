@@ -132,8 +132,6 @@ typedef struct _PCIE_PORT_INFO {
     UINT8       Stack;
 } PCIE_PORT_INFO;
 
-#pragma optimize("",off)
-
 extern BIOS_ACPI_PARAM             *mAcpiParameter;
 
 extern struct SystemMemoryMapHob   *mSystemMemoryMap;
