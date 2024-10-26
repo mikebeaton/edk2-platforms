@@ -24,8 +24,8 @@
 
 [PcdsFeatureFlag]
 !if $(gMinPlatformPkgTokenSpaceGuid.PcdBootStage) >= 5
-  gIpmiFeaturePkgTokenSpaceGuid.PcdIpmiFeatureEnable        |TRUE
-  gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable  |TRUE
+  gIpmiFeaturePkgTokenSpaceGuid.PcdIpmiFeatureEnable        |FALSE
+  gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable  |FALSE
 !endif
 
   !include AdvancedFeaturePkg/Include/AdvancedFeatures.dsc

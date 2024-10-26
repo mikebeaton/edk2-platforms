@@ -79,9 +79,9 @@
 
 [PcdsFeatureFlag]
   gEfiMdeModulePkgTokenSpaceGuid.PcdBrowerGrayOutReadOnlyMenu|TRUE
-  gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable|TRUE
-  gSmbiosFeaturePkgTokenSpaceGuid.PcdSmbiosFeatureEnable|TRUE
-  gIpmiFeaturePkgTokenSpaceGuid.PcdIpmiFeatureEnable|TRUE
+  gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable|FALSE
+  gSmbiosFeaturePkgTokenSpaceGuid.PcdSmbiosFeatureEnable|FALSE
+  gIpmiFeaturePkgTokenSpaceGuid.PcdIpmiFeatureEnable|FALSE
 
 [PcdsDynamicExDefault]
 !include $(PROJECT)/StructureConfig.dsc

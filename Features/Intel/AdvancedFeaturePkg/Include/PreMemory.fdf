@@ -37,13 +37,6 @@
   !include NetworkFeaturePkg/Include/PreMemory.fdf
 !endif
 
-#
-# OutOfBandManagement features
-#
-!if gIpmiFeaturePkgTokenSpaceGuid.PcdIpmiFeatureEnable == TRUE
-  !include IpmiFeaturePkg/Include/PreMemory.fdf
-!endif
-
 !if gSpcrFeaturePkgTokenSpaceGuid.PcdSpcrFeatureEnable == TRUE
   !include SpcrFeaturePkg/Include/PreMemory.fdf
 !endif

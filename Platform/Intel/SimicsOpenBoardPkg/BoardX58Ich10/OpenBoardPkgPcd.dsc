@@ -79,8 +79,8 @@
   ######################################
   # Advanced Feature Configuration
   ######################################
-  gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable|TRUE
-  gSmbiosFeaturePkgTokenSpaceGuid.PcdSmbiosFeatureEnable|TRUE
+  gNetworkFeaturePkgTokenSpaceGuid.PcdNetworkFeatureEnable|FALSE
+  gSmbiosFeaturePkgTokenSpaceGuid.PcdSmbiosFeatureEnable|FALSE
   gMinPlatformPkgTokenSpaceGuid.PcdSerialTerminalEnable|TRUE
 
 [PcdsFeatureFlag.X64]
