@@ -183,7 +183,6 @@ PatchDsdtTable (
     { PCIE_PORT_4_DEV, IIO_PSTACK3 },
     { PCIE_PORT_5_DEV, IIO_PSTACK4 }
   };
-  EFI_STATUS Status;
   UINT8   *DsdtPointer;
   UINT32  *Signature;
   UINT32  Fixes, NodeIndex;
@@ -215,7 +214,6 @@ PatchDsdtTable (
   AML_RESOURCE_ADDRESS64 *AmlResourceAddress64Pointer;
   EFI_ACPI_DESCRIPTION_HEADER   *TableHeader;
 
-  Status = EFI_SUCCESS;
   TableHeader = (EFI_ACPI_DESCRIPTION_HEADER *)Table;
 
   if (mAmlOffsetTablePointer == NULL) return EFI_INVALID_PARAMETER;
@@ -511,7 +509,5 @@ PatchDsdtTable (
     }
   }
 
-  //return Status;
   return EFI_SUCCESS;
-
 }

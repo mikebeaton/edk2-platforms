@@ -2599,9 +2599,8 @@ GpioLockPads (
   GPIO_GROUP           Group;
   UINT32               GroupIndex;
   UINT32               PadNumber;
-  PCH_SERIES           PchSeries;
 
-  PchSeries = GetPchSeries ();
+  GetPchSeries ();
   PadOwnVal = GpioPadOwnHost;
 
   ZeroMem (PadsToLock, sizeof (PadsToLock));

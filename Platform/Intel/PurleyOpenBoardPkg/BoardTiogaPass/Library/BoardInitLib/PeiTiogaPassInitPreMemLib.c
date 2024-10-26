@@ -387,7 +387,6 @@ PlatformInitGpios (
   VOID
   )
 {
-  EFI_STATUS                   Status;
   GPIO_INIT_CONFIG             *GpioTable;
   UINTN                        TableSize;
 
@@ -396,7 +395,7 @@ PlatformInitGpios (
 
   GpioTable = mGpioTableTiogaPass;
   DEBUG ((DEBUG_ERROR, "UBA: ConfigureGpio() TiogaPass Start.\n"));
-  Status = GpioConfigurePads (TableSize/sizeof (GPIO_INIT_CONFIG), GpioTable);
+  GpioConfigurePads (TableSize/sizeof (GPIO_INIT_CONFIG), GpioTable);
   DEBUG ((DEBUG_ERROR, "UBA: ConfigureGpio() TiogaPass End.\n"));
 
   return EFI_SUCCESS;

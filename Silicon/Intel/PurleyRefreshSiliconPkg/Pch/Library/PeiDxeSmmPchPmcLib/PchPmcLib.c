@@ -138,10 +138,9 @@ PchIsDwrFlow (
   VOID
   )
 {
-  EFI_STATUS  Status;
   UINT32      PchPwrmBase;
 
-  Status = PchPwrmBaseGet (&PchPwrmBase);
+  PchPwrmBaseGet (&PchPwrmBase);
   ASSERT (PchPwrmBase != 0);
 
   if ((PchPwrmBase != 0) &&
