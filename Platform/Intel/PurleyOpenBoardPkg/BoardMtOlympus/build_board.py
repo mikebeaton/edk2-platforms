@@ -61,12 +61,12 @@ def pre_build_ex(config, functions):
                             "PurleyOpenBoardPkg",
                             "Acpi",
                             "BoardAcpiDxe",
-                            "DSDT",
+                            "Dsdt",
                             "OUTPUT",
                             "Dsdt", "WFPPlatform.offset.h")]
 
     # execute the command
-    _, _, _, code = execute_script(command, config)
+    _, _, _, code = execute_script(command, config, shell=False)
     if code != 0:
         print(" ".join(command))
         print("Error re-generating PlatformOffset header files")
@@ -125,7 +125,7 @@ def post_build_ex(config, functions):
                     "FvLateSilicon"]
     for fv in fvs_to_patch:
         patch_command = common_patch_command + [fv]
-        _, _, _, code = execute_script(patch_command, config)
+        _, _, _, code = execute_script(patch_command, config, shell=False)
         if code != 0:
             print(" ".join(patch_command))
             print("Patch Error!")
@@ -144,7 +144,7 @@ def post_build_ex(config, functions):
         ["FvPreMemorySilicon",
          "gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspMBase"]
 
-    _, _, _, code = execute_script(rebase_command, config)
+    _, _, _, code = execute_script(rebase_command, config, shell=False)
     if code != 0:
         print(" ".join(rebase_command))
         print("Patch Error!")
@@ -154,7 +154,7 @@ def post_build_ex(config, functions):
         ["FvPostMemorySilicon",
          "gMinPlatformPkgTokenSpaceGuid.PcdFlashFvFspSBase"]
 
-    _, _, _, code = execute_script(rebase_command, config)
+    _, _, _, code = execute_script(rebase_command, config, shell=False)
     if code != 0:
         print(" ".join(rebase_command))
         print("Patch Error!")
